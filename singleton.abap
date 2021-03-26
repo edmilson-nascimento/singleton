@@ -46,29 +46,30 @@ REPORT yteste.
 *       CLASS lcl_application DEFINITION
 *----------------------------------------------------------------------*
 CLASS lcl_application DEFINITION CREATE PRIVATE.
-*
+
   PUBLIC SECTION.
+
 *   Static Method which will return us the object reference
     CLASS-METHODS get_apps_instance
       RETURNING
-          VALUE(ro_apps) TYPE REF TO lcl_application.
-*
-    METHODS:
-      set_internal_name
-        IMPORTING
-          iv_name TYPE char30,
-      get_internal_name
-        RETURNING
-          VALUE(rv_name) TYPE char30.
-*
+        VALUE(ro_apps) TYPE REF TO lcl_application.
+
+    METHODS set_internal_name
+      IMPORTING
+        iv_name TYPE char30 .
+    METHODS get_internal_name
+      RETURNING
+        VALUE(rv_name) TYPE char30.
+
   PRIVATE SECTION.
+
 *   static class reference to hold the existing object reference
     CLASS-DATA:
       internal_object TYPE REF TO lcl_application.
-*
+
     DATA:
       internal_name TYPE char30 .
-*
+
 ENDCLASS.                    "lcl_application DEFINITION
 *
 *
