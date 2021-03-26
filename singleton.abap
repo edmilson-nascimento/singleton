@@ -71,13 +71,13 @@ CLASS lcl_application DEFINITION CREATE PRIVATE.
       internal_name TYPE char30 .
 
 ENDCLASS.                    "lcl_application DEFINITION
-*
-*
+
+
 *----------------------------------------------------------------------*
 *       CLASS lcl_application IMPLEMENTATION
 *----------------------------------------------------------------------*
 CLASS lcl_application IMPLEMENTATION.
-*
+
 * This method will return the object reference to the calling application
   METHOD get_apps_instance.
     IF internal_object IS INITIAL.
@@ -87,15 +87,18 @@ CLASS lcl_application IMPLEMENTATION.
 *   assigning reference back to exporting parameter
     ro_apps = internal_object.
   ENDMETHOD.                    "get_apps_instance
-*
+
+
   METHOD set_internal_name.
     me->internal_name = iv_name.
   ENDMETHOD.                    "set_v_name
-*
+
+
   METHOD get_internal_name.
     rv_name = me->internal_name.
   ENDMETHOD.                    "get_v_name
-*
+
+
 ENDCLASS.                    "lcl_application IMPLEMENTATION
 *
 *
